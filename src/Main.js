@@ -6,14 +6,14 @@ class Main extends React.Component {
     return (
       <main>
         <HornedBeast
-        title='unicorn'
-        imageUrl='https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F413L6uW4ziL._AC_SY580_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.com%2FOne-Fire-Unicorns-Changing-Birthday%2Fdp%2FB099DGQ77F&tbnid=m5nC2lrL56TlLM&vet=12ahUKEwjQkPfynZ_7AhUhKX0KHTCGAaQQ94IIKAB6BQgBEMgD..i&docid=jBh2rGK-cSroIM&w=500&h=500&q=unicorn&hl=en&ved=2ahUKEwjQkPfynZ_7AhUhKX0KHTCGAaQQ94IIKAB6BQgBEMgD'
-        description='cute unicorn'
+        title='narwhal'
+        imageUrl='http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg'
+        description='narwhal!'
         />
         <HornedBeast
-        title='dog unicorn'
-        imageUrl='https://www.rover.com/blog/wp-content/uploads/2019/09/corgi-unicorn-1-960x540.jpg'
-        description='dog unicorn!'
+        title='rhino'
+        imageUrl='https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80'
+        description='Rhino!'
         />
       </main>
     )

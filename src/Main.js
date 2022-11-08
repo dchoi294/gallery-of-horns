@@ -5,8 +5,16 @@ class Main extends React.Component {
   render() {
     return (
       <main>
-        <HornedBeast/>
-        <HornedBeast/>
+        <HornedBeast
+        title=''
+        imageUrl=''
+        description=''
+        />
+        <HornedBeast
+        title=''
+        imageUrl=''
+        description=''
+        />
       </main>
     )
   }

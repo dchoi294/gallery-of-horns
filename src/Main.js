@@ -9,12 +9,13 @@ class Main extends React.Component {
     data.forEach((hornbeast, index) => {
       hornedBeastArray.push(
         <HornedBeast
-          key={index}
+          id={hornbeast._id}
           image_url={hornbeast.image_url}
           title={hornbeast.title}
           description={hornbeast.description}
           keyword={hornbeast.keyword}
           horn={hornbeast.horns}
+          key={index}
         />
       )
     })

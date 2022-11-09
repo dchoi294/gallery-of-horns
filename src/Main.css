@@ -1,0 +1,15 @@
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+body {
+  background-color:blanchedalmond;
+}
+
+img {
+  height: 150px;
+  width: auto;
+}

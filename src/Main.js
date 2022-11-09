@@ -10,7 +10,7 @@ class Main extends React.Component {
       hornedBeastArray.push(
         <HornedBeast
           key={index}
-          image_url={hornbeast.image_rul}
+          image_url={hornbeast.image_url}
           title={hornbeast.title}
           description={hornbeast.description}
           keyword={hornbeast.keyword}

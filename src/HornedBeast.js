@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -9,25 +11,27 @@ class HornedBeast extends React.Component {
   }
 
   handleFavorites = () => {
-    this.state({
+    this.setState({
       favorites: this.state.favorites + 1
     });
   }
 
   render() {
     return (
-      <article>
-        <h2>{this.props.name}</h2>
-        <img
-          onClick={this.handleFavorites}
-          src={this.props.image_url}
-          alt={this.props.description}
-          title={this.props.title}
+      <Card style={{ width: '18rem' }}>
+        <Card.Img 
+        onClick = {this.handleFavorites}
+        variant="top"
+        src={this.props.image_url}
+        alt={this.props.description}
+        title={this.props.title}
         />
-        <p >{this.state.favorites} favorites</p>
-        <p>{this.props.description}</p>
-      </article>
-    )
+        <Card.Body>
+          <Card.Title>{this.props.name}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+        </Card.Body>
+      </Card>
+    );
   }
 }
 

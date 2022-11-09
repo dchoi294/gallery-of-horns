@@ -18,13 +18,13 @@ class HornedBeast extends React.Component {
     return (
       <article>
         <h2>{this.props.name}</h2>
-        <p>{this.state.favorites} favorites</p>
-        <p onClick={this.handleFavorites}> :D</p>
-        <img 
-          src={this.props.imageURL}
+        <img
+          onClick={this.handleFavorites}
+          src={this.props.image_url}
           alt={this.props.description}
           title={this.props.title}
         />
+        <p >{this.state.favorites} favorites</p>
         <p>{this.props.description}</p>
       </article>
     )

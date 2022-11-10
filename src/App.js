@@ -10,7 +10,7 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      modalShow: false,
+      modalDisplay: false,
       modalImage: '',
       modalP:''
     };
@@ -18,7 +18,7 @@ class App extends React.Component{
 
   displayModal = (image, description) => {
     this.setState({
-      modalShow: true,
+      modalDisplay: true,
       modalImage: image,
       modalP: description
     });
@@ -26,7 +26,7 @@ class App extends React.Component{
 
   hideModal = () => {
     this.setState({
-      modalShow: false
+      modalDisplay: false
     });
   }
 
@@ -34,13 +34,19 @@ class App extends React.Component{
     return (
       <>
         <Header/>
+
         <SelectedBeasts
-          modalDisplay={this.state.modalDisplay}
-          modalImage={this.state.modalImage}
-          modalP={this.state.modalP}
-          hideModal={this.hideModal}
+        modalDisplay={this.state.modalDisplay}
+        modalImage={this.state.modalImage}
+        modalP={this.state.modalP}
+        hideModal={this.hideModal}
         />
-        <Main data={Data} displayModal={this.displayModal}/>
+
+        <Main 
+        data={Data} 
+        displayModal={this.displayModal}
+        />
+
         <Footer/>
       </>
     );

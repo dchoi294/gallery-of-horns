@@ -19,6 +19,7 @@ class SelectedBeast extends React.Component {
           <img 
           src={this.props.modalImage}
           alt={this.props.modalP}
+          width='466px'
           />
         </Modal.Body>
 

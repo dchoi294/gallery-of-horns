@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class HornedBeast extends React.Component {
   }
 
   handleFavorites = () => {
-    this.props.displayModal(this.props.image_url,this.props.description);
+    this.props.displayModal(this.props.image_url, this.props.description);
     this.setState({
       favorites: this.state.favorites + 1
     });

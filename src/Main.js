@@ -31,7 +31,6 @@ class Main extends React.Component {
     } else {
       sortByHorns = this.props.data
     }
-    console.log(sortByHorns)
     this.setState({
       sortArray: sortByHorns
     })

@@ -11,6 +11,7 @@ class HornedBeast extends React.Component {
   }
 
   handleFavorites = () => {
+    this.props.displayModal(this.props.image_url,this.props.description);
     this.setState({
       favorites: this.state.favorites + 1
     });
@@ -29,6 +30,7 @@ class HornedBeast extends React.Component {
         <Card.Body>
           <Card.Title>{this.props.name}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
+          <p>{this.state.favorites} favorites!!</p>
         </Card.Body>
       </Card>
     );

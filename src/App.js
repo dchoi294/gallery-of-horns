@@ -31,6 +31,7 @@ class App extends React.Component{
   }
 
   render() {
+
     return (
       <>
         <Header/>
@@ -45,7 +46,8 @@ class App extends React.Component{
         <Main 
         data={Data} 
         displayModal={this.displayModal}
-        />
+        >
+        </Main>
 
         <Footer/>
       </>

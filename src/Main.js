@@ -2,8 +2,10 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Main.css';
-import ListGroup from 'react-bootstrap/ListGroup';
+import {Form, ListGroup, Button} from 'react-bootstrap';
+import Data from './data.json';
 
+let hornedBeastArray = Data;
 
 class Main extends React.Component {
 
@@ -19,17 +21,16 @@ class Main extends React.Component {
     event.preventDefault();
 
     let sortByHorns = [];
-    console.log(hornNumb)
     if(this.state.sort === 1) {
-      sortByHorns = this.props.data.filter(horns => horns === 1)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 1)
     } else if(this.state.sort ===2) {
-      sortByHorns = this.props.data.filter(horns => horns === 2)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 2)
     } else if(this.state.sort ===3) {
-      sortByHorns = this.props.data.filter(horns => horns === 3)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 3)
     } else if(this.state.sort > 3) {
-      sortByHorns = this.props.data.filter(horns => horns > 3)
+      sortByHorns = hornedBeastArray.filter(horns => horns > 3)
     } else {
-      sortByHorns = this.props.data
+      sortByHorns = hornedBeastArray
     }
 
     this.setState({
@@ -44,9 +45,7 @@ class Main extends React.Component {
   }
 
   render() {
-    let hornedBeastArray = [];
-
-    hornedBeastArray = this.props.data.map((hornbeast) => {
+    let beasts = hornedBeastArray.map((hornbeast) => {
       return(
         <HornedBeast
         displayModal={this.props.displayModal}
@@ -60,28 +59,30 @@ class Main extends React.Component {
       )
     });
 
-    let hornNumb = this.state.sortArray.map((arr, index) => {
-      return <ListGroup.Item key={index}>{arr}</ListGroup.Item>
-    })
-
     return (
       <main>
-         <form onSubmit={this.handleSubmit}>
-            <fieldset>
-              <legend>Number of horns</legend>
-              <select name="selected">
-                <option value="all">All</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4+">4+</option>
-              </select>
-            </fieldset>
-            <button type="submit">Submit</button>
+        <form onSubmit={this.handleSubmit}>
+
+          <Form.Group>
+            <Form.Label>Number of horns</Form.Label>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label htmlFor="filterOption">Select Numbers</Form.Label>
+            <Form.Select id="filterOption" name="selected" onChange={this.handleSelect}>
+              <option value="all">All</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </Form.Select>
+          </Form.Group>
+
+            <Button type="submit">Submit</Button>
           </form>
 
           <ListGroup>
-            {hornedBeastArray}
+            {beasts}
           </ListGroup>
       </main>
     )

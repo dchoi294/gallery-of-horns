@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Main from './Main';
 import SelectedBeasts from './SelectedBeast'
 import './App.css';
-import Data from './data.json';
+
 
 class App extends React.Component{
   constructor(props) {
@@ -44,7 +44,7 @@ class App extends React.Component{
         />
 
         <Main 
-        data={Data} 
+        // data={Data} 
         displayModal={this.displayModal}
         >
         </Main>

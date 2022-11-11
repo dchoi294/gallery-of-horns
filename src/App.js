@@ -4,6 +4,8 @@ import Footer from './Footer';
 import Main from './Main';
 import SelectedBeasts from './SelectedBeast'
 import './App.css';
+import Data from './data.json';
+
 
 
 class App extends React.Component{
@@ -12,8 +14,33 @@ class App extends React.Component{
     this.state = {
       modalDisplay: false,
       modalImage: '',
-      modalP:''
+      modalP:'',
+      sortByHorns: Data
     };
+  }
+
+  handleSelect = (event) => {
+    event.preventDefault();
+
+    let sort = event.target.value;
+    
+    console.log(sort);
+    
+    if(sort === '1') {
+      let newSort = Data.filter(sortHorn => sortHorn.horns === 1);
+      this.setState({sortByHorns: newSort});
+    } else if(sort === '2') {
+      let newSort = Data.filter(sortHorn => sortHorn.horns === 2);
+      this.setState({sortByHorns: newSort});
+    } else if(sort === '3') {
+      let newSort = Data.filter(sortHorn => sortHorn.horns === 3);
+      this.setState({sortByHorns: newSort});
+    } else if(sort === '4+') {
+      let newSort = Data.filter(sortHorn => sortHorn.horns > 3);
+      this.setState({sortByHorns: newSort});
+    } else {
+      this.setState({sortByHorns: Data});
+    }
   }
 
   displayModal = (image, description) => {
@@ -31,7 +58,6 @@ class App extends React.Component{
   }
 
   render() {
-
     return (
       <>
         <Header/>
@@ -44,8 +70,9 @@ class App extends React.Component{
         />
 
         <Main 
-        // data={Data} 
+        data={this.state.sortByHorns}
         displayModal={this.displayModal}
+        handleSelect={this.handleSelect}
         >
         </Main>
 

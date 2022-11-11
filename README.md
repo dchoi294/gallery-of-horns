@@ -16,8 +16,8 @@ Actual time needed to complete: about 2 hours and 30 minutes, I had some breaks 
 
 Number and name of feature: 1, W3School
 
-Estimate of time needed to complete: 3 hours
+Estimate of time needed to complete: 4 hours
 
 Start time: 3:30pm
 
-Finish time: 6:30pm
+Finish time: 7:30pm

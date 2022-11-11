@@ -3,8 +3,9 @@ import HornedBeast from './HornedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Main.css';
 import {Form, ListGroup, Button} from 'react-bootstrap';
+import Data from './data.json';
 
-
+let hornedBeastArray = Data;
 
 class Main extends React.Component {
 
@@ -21,16 +22,17 @@ class Main extends React.Component {
 
     let sortByHorns = [];
     if(this.state.sort === 1) {
-      sortByHorns = this.props.data.filter(horns => horns === 1)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 1)
     } else if(this.state.sort ===2) {
-      sortByHorns = this.props.data.filter(horns => horns === 2)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 2)
     } else if(this.state.sort ===3) {
-      sortByHorns = this.props.data.filter(horns => horns === 3)
+      sortByHorns = hornedBeastArray.filter(horns => horns === 3)
     } else if(this.state.sort > 3) {
-      sortByHorns = this.props.data.filter(horns => horns > 3)
+      sortByHorns = hornedBeastArray.filter(horns => horns > 3)
     } else {
-      sortByHorns = this.props.data
+      sortByHorns = hornedBeastArray
     }
+
     this.setState({
       sortArray: sortByHorns
     })
@@ -43,9 +45,7 @@ class Main extends React.Component {
   }
 
   render() {
-    let hornedBeastArray = [];
-
-    hornedBeastArray = this.props.data.map((hornbeast) => {
+    let beasts = hornedBeastArray.map((hornbeast) => {
       return(
         <HornedBeast
         displayModal={this.props.displayModal}
@@ -58,10 +58,6 @@ class Main extends React.Component {
         />
       )
     });
-
-    let hornNumb = this.state.sortArray.map((arr, index) => {
-      return <ListGroup.Item key={index}>{arr}</ListGroup.Item>
-    })
 
     return (
       <main>
@@ -86,7 +82,7 @@ class Main extends React.Component {
           </form>
 
           <ListGroup>
-            {hornNumb}
+            {beasts}
           </ListGroup>
       </main>
     )
